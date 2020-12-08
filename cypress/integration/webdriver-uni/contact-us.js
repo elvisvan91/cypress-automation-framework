@@ -1,9 +1,11 @@
 /// <reference types="Cypress" />
 
 describe("Test contact us form via webdriverUni", () => {
-  it("Should be able to submit a successful submision via contact us form", () => {
+  it.only("Should be able to submit a successful submision via contact us form", () => {
     //cyypress code
-    cy.visit("http://webdriveruniversity.com/Contact-Us/contactus.html");
+    // cy.visit("http://webdriveruniversity.com/Contact-Us/contactus.html");
+    cy.visit("http://webdriveruniversity.com");
+    cy.get("#contact-us").invoke("removeAttr", "target").click();
     cy.document().should("have.a.property", "charset").and("eq", "UTF-8");
     cy.title().should("include", "WebDriver");
     cy.url().should("include", "Contact-Us/contactus.html");
