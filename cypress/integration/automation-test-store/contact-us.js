@@ -1,6 +1,10 @@
 /// <reference types="Cypress" />
 
 describe("Test contact us form via automation store", () => {
+  before(() => {
+    cy.viewport('iphone-8')
+    cy.fixture('userDetails.json').as('user')
+  })
   it("Should be able to submit a successful submision via contact us form", () => {
     cy.visit("https://automationteststore.com/");
     // cy.xpath("//a[contains(@href, 'contact')]").click()
@@ -9,8 +13,11 @@ describe("Test contact us form via automation store", () => {
       .then((linkText) => {
         cy.log(`Link text is: ${linkText.text()}`);
       });
-    cy.get("#ContactUsFrm_first_name").type("VoT");
-    cy.get("#ContactUsFrm_email").type("haha@gmail.com");
+    cy.get("@user").then(user => {
+      cy.get("#ContactUsFrm_first_name").type(user.first_name);
+      cy.get("#ContactUsFrm_email").type(user.email);
+    })
+
     cy.get("#ContactUsFrm_email").should("have.attr", "name", "email");
     cy.get("#ContactUsFrm_enquiry").type("chieu nay cha co gi hot");
     cy.get("button[title='Submit']").click();

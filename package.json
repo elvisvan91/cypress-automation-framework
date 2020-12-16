@@ -4,7 +4,13 @@
   "description": "Cypress Automation Framework",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "triggerAllTests-headless": "npx cypress run",
+    "triggerAllTests-headed": "npx cypress run --headed",
+    "triggerAllTests-chrome": "npx cypress run --browser chome",
+    "triggerAllTests-firefox": "npx cypress run --browser firefox",
+    "triggerAllTests-dashboard": "npx cypress run --browser chrome --record --key 4545d97c-55af-497b-a185-49c0237516f5",
+    "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
+    "triggerAllTests-automationteststore": "npx cypress run --spec cypress/integration/automation-test-store/*"
   },
   "author": "Vo Thanh Van",
   "license": "ISC",
