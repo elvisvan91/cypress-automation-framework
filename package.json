@@ -10,13 +10,24 @@
     "triggerAllTests-firefox": "npx cypress run --browser firefox",
     "triggerAllTests-dashboard": "npx cypress run --browser chrome --record --key 4545d97c-55af-497b-a185-49c0237516f5",
     "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
-    "triggerAllTests-automationteststore": "npx cypress run --spec cypress/integration/automation-test-store/*"
+    "triggerAllTests-automationteststore": "npx cypress run --spec cypress/integration/automation-test-store/*",
+    "junit-merge": "npx junit-merge -d cypress/results -o cypress/results/junit/results.xml",
+    "delete-junit-report": "rm -rf cypress/results/junit/results.xml",
+    "delete-results": "rm -rf cypress/results/junit/* || true",
+    "mochawesome-merge": "npx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && npx marge mochawesome.json",
+    "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
+    "cypress-regression-pack": "npm run delete-results && npm run delete-mochawesome-report && npm run triggerAllTests-chrome && npm run mochawesome-merge"
   },
   "author": "Vo Thanh Van",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^6.0.1",
     "cypress-file-upload": "^4.1.1",
-    "cypress-xpath": "^1.6.1"
+    "cypress-multi-reporters": "^1.4.0",
+    "cypress-xpath": "^1.6.1",
+    "mocha-junit-reporter": "^2.0.0",
+    "mochawesome": "^6.2.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.1.0"
   }
 }

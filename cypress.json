@@ -4,5 +4,10 @@
     "webdriveruni_homepage": "http://webdriveruniversity.com"
   },
   "baseUrl": "http://webdriveruniversity.com",
-  "projectId": "ex9qyj"
+  "projectId": "ex9qyj",
+
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter-config.json"
+  }
 }

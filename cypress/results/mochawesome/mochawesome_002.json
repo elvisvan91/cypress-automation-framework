@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-12-16T14:58:32.909Z",
+    "end": "2020-12-16T14:58:43.491Z",
+    "duration": 10582,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "89ee29aa-8ac8-43cd-8f06-234583d90bc0",
+      "title": "",
+      "fullFile": "cypress\\integration\\automation-test-store\\challenge-as-invoke.js",
+      "file": "cypress\\integration\\automation-test-store\\challenge-as-invoke.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a3c5b6d4-0864-40ea-955f-f3d38594020d",
+          "title": "Challenge",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Calculate total of normal and sale product",
+              "fullTitle": "Challenge Calculate total of normal and sale product",
+              "timedOut": null,
+              "duration": 8270,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"https://automationteststore.com/\");\ncy.get(\".thumbnail\").as(\"productHomePage\"); // cy.get(\"@productHomePage\")\n//   .find(\".oneprice\")\n//   .each(($el, index, $list) => {\n//     cy.log($el.text().substring(1));\n//   });\ncy.get(\"@productHomePage\").find(\".oneprice\").invoke(\"text\").as(\"itemPrice\");\ncy.get(\"@productHomePage\").find(\".pricenew\").invoke(\"text\").as(\"itemPriceNew\");\nvar itemTotal = 0;\nvar itemTotalNewPrice = 0;\ncy.get(\"@itemPrice\").then(function ($linkText) {\n  var totalOneprice = 0;\n  var itemPrice = $linkText.split(\"$\");\n  for (var i = 0; i < itemPrice.length; i++) {\n    cy.log(itemPrice[i]);\n    totalOneprice += Number(itemPrice[i]);\n  }\n  itemTotal += totalOneprice;\n  cy.log(\"Total oneprice item is: \".concat(itemTotal));\n});\ncy.get(\"@itemPriceNew\").then(function ($linkText) {\n  var totalOneprice = 0;\n  var itemPriceNew = $linkText.split(\"$\");\n  for (var i = 0; i < itemPriceNew.length; i++) {\n    cy.log(itemPriceNew[i]);\n    totalOneprice += Number(itemPriceNew[i]);\n  }\n  itemTotalNewPrice += totalOneprice;\n  cy.log(\"Total new price item is: \".concat(itemTotalNewPrice));\n});",
+              "err": {},
+              "uuid": "d9c712a0-865a-48d7-ab6c-ea91c62aa335",
+              "parentUUID": "a3c5b6d4-0864-40ea-955f-f3d38594020d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "d9c712a0-865a-48d7-ab6c-ea91c62aa335"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8270,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}

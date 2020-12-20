@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-12-16T14:59:33.583Z",
+    "end": "2020-12-16T14:59:45.696Z",
+    "duration": 12113,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7b9207e5-fdf7-43e6-a29e-0dc3ae787fd5",
+      "title": "",
+      "fullFile": "cypress\\integration\\automation-test-store\\iterate-over-elements.js",
+      "file": "cypress\\integration\\automation-test-store\\iterate-over-elements.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1c5ec442-cc2f-4034-9b29-16c0c994d122",
+          "title": "Verify variable, cypress commands and jquery commands",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "another product",
+              "fullTitle": "Verify variable, cypress commands and jquery commands another product",
+              "timedOut": null,
+              "duration": 10948,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.selectProduct(\"Seaweed Conditioner\");",
+              "err": {},
+              "uuid": "aed23411-264b-4a20-9d97-47b04b561650",
+              "parentUUID": "1c5ec442-cc2f-4034-9b29-16c0c994d122",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "aed23411-264b-4a20-9d97-47b04b561650"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 10948,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/results/mochawesome",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.1.0"
+    }
+  }
+}
