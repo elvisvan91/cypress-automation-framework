@@ -8,7 +8,7 @@
     "triggerAllTests-headed": "npx cypress run --headed",
     "triggerAllTests-chrome": "npx cypress run --browser chome",
     "triggerAllTests-firefox": "npx cypress run --browser firefox",
-    "triggerAllTests-dashboard": "npx cypress run --browser chrome --record --key 4545d97c-55af-497b-a185-49c0237516f5",
+    "triggerAllTests-dashboard": "npx cypress run --browser chrome --record --key 4545d97c-55af-497b-a185-49c0237516f5 --parallel --browser chrome --firefox",
     "triggerAllTests-webdriveruni": "npx cypress run --spec cypress/integration/webdriver-uni/*",
     "triggerAllTests-automationteststore": "npx cypress run --spec cypress/integration/automation-test-store/*",
     "junit-merge": "npx junit-merge -d cypress/results -o cypress/results/junit/results.xml",
